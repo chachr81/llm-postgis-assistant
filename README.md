@@ -28,7 +28,7 @@ Asistente inteligente que transforma lenguaje natural en consultas SQL espaciale
 
 ---
 ## Estructura del Proyecto
-
+```bash
 ├── app/
 │   ├── main.py              ← FastAPI App
 │   ├── routers/chat.py      ← Endpoint /api/chat
@@ -42,12 +42,12 @@ Asistente inteligente que transforma lenguaje natural en consultas SQL espaciale
 │   └── models/              ← Modelos locales (no incluidos en el repo)
 ├── requirements.txt
 └── README.md
-
+```
 ---
 ## Notas Adicionales
 
-El proyecto no expone tu base de datos ni requiere conexión a internet.
-Se recomienda personalizar las funciones en sql_fixup.py para adaptarse a tu modelo de datos y SRIDs locales.
+- El proyecto no expone tu base de datos ni requiere conexión a internet.
+- Se recomienda personalizar las funciones en sql_fixup.py para adaptarse a tu modelo de datos y SRIDs locales.
 
 ---
 
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 ---
 ## Licencia
 
-MIT © 2025 – Christian Chacón Romero
-Este proyecto es de código abierto y puedes modificarlo, adaptarlo y compartirlo con la comunidad.
+- MIT © 2025 – Christian Chacón Romero \n
+- Este proyecto es de código abierto y puedes modificarlo, adaptarlo y compartirlo con la comunidad.
 
 ---
