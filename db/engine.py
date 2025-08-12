@@ -2,9 +2,11 @@ from sqlalchemy import create_engine, text
 from urllib.parse import quote_plus
 from dotenv import dotenv_values
 from typing import List, Dict, Any
+from pathlib import Path
 
-# Lee el .env (ajusta la ruta si usas otra)
-config = dotenv_values("/home/dps_boldo/.env")
+# Cargar .env desde ruta relativa al archivo
+BASE_DIR = Path(__file__).resolve().parent
+config = dotenv_values(BASE_DIR.parent.parent / ".env")
 
 user = config.get("DB_USER_LLM")
 pwd  = quote_plus(config.get("DB_PASSWORD_LLM") or "")  # URL-encode
@@ -32,7 +34,7 @@ def run_query_secure(sql: str, limit_default: int = 500) -> List[Dict[str, Any]]
             "SET search_path TO datos_crudos, datos_maestros, medio_fisico, specimen, public;"
         )
         result = conn.execute(text(sql_limited))
-        rows = [dict(r._mapping) for r in result]
+        rows = [dict(row) for row in result.mappings()]
     return rows
 
 def ping_version() -> str:
@@ -40,4 +42,4 @@ def ping_version() -> str:
     with engine.begin() as conn:
         conn.exec_driver_sql("SET statement_timeout TO '5s';")
         v = conn.execute(text("SELECT version() AS ver")).scalar()
-    return v
+    return str(v)
