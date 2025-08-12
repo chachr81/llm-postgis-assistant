@@ -68,7 +68,8 @@ pip install -r requirements.txt
 ---
 ## Licencia
 
-MIT © 2025 – Christian Chacón Romero \n
+MIT © 2025 – Christian Chacón Romero.
+
 Este proyecto es de código abierto y puedes modificarlo, adaptarlo y compartirlo con la comunidad.
 
 ---
