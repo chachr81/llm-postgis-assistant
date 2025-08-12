@@ -1,0 +1,29 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Archivos de entorno / configuración local
+.env
+.env.*
+
+# Archivos temporales / editor
+*.pyc
+__pycache__/
+*.log
+*.sqlite3
+.DS_Store
+*.swp
+
+# Carpeta de modelos locales
+llm/models/
+llm/checkpoints/
+llm/cache/
+
+# Archivos de VSCode / IDEs
+.vscode/
+.idea/
+
+# Archivos de pruebas temporales
+*.tmp
+*.bak
+*.old
